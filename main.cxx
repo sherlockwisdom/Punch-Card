@@ -60,11 +60,13 @@ int main(int argc, char** argv ) {
 	vector<vector<int>> punches;
 
 	for(unsigned short int j=0;j<input.size();++j) {
-		punches.push_back( rows[toupper(input[j])] );
+		input[j] = toupper(input[j]);
+		punches.push_back( rows[input[j]] );
 	}
 
-	cout << "[+] Number of punches: " << punches.size() << endl;
-	for(unsigned short int i=0;i<12;++i, cout << " " <<endl) {
+	// cout << "[+] Number of punches: " << punches.size() << endl;
+	cout << "\t" << input << endl << endl;
+	for(unsigned short int i=0;i<12;++i, cout << endl) {
 		cout << symbols[i] << "\t";
 		for(unsigned short int j=0;j<punches.size();++j) {
 			cout << punches[j][i];
