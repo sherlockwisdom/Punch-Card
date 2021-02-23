@@ -46,17 +46,27 @@ map<char, vector<int>> rows = {
 	{'8', {0,0,0,0,0,0,0,0,0,0,1,0}},
 	{'9', {0,0,0,0,0,0,0,0,0,0,0,1}}
 };
-// TODO: Add symbols
 
+
+// TODO: Add symbols
 int main(int argc, char** argv ) {
+	// String values should be inputed here to avoid asking
 	string sample="abc";
 
-	vector<int> punches = rows[toupper(sample[0])];
 	string symbols = "__0123456789";
-	for(unsigned short int i=0;i<punches.size();++i) {
-		cout << symbols[i] << "\t" << punches[i] << endl;
-		if(i == 2 )
-			cout << endl;
+	vector<vector<int>> punches;
+
+	for(unsigned short int j=0;j<sample.size();++j) {
+		punches.push_back( rows[toupper(sample[j])] );
+	}
+
+	cout << "[+] Number of punches: " << punches.size() << endl;
+	for(unsigned short int i=0;i<12;++i, cout << " " <<endl) {
+		cout << symbols[i] << "\t";
+		for(unsigned short int j=0;j<punches.size();++j) {
+			cout << punches[j][i];
+		}
+		if(i == 2 ) cout << endl;
 	}
 
 	return 0;
