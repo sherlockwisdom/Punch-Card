@@ -48,7 +48,6 @@ map<char, vector<int>> rows = {
 };
 // TODO: Add symbols
 
-
 int main(int argc, char** argv ) {
 	string sample="abc";
 
