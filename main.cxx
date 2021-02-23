@@ -51,13 +51,16 @@ map<char, vector<int>> rows = {
 // TODO: Add symbols
 int main(int argc, char** argv ) {
 	// String values should be inputed here to avoid asking
-	string sample="abc";
+	// string sample="abc";
+	string input;
+	cout << ">> Input: ";
+	getline(cin, input);
 
 	string symbols = "__0123456789";
 	vector<vector<int>> punches;
 
-	for(unsigned short int j=0;j<sample.size();++j) {
-		punches.push_back( rows[toupper(sample[j])] );
+	for(unsigned short int j=0;j<input.size();++j) {
+		punches.push_back( rows[toupper(input[j])] );
 	}
 
 	cout << "[+] Number of punches: " << punches.size() << endl;
