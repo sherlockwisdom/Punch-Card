@@ -44,7 +44,9 @@ map<char, vector<int>> rows = {
 	{'6', {0,0,0,0,0,0,0,0,1,0,0,0}},
 	{'7', {0,0,0,0,0,0,0,0,0,1,0,0}},
 	{'8', {0,0,0,0,0,0,0,0,0,0,1,0}},
-	{'9', {0,0,0,0,0,0,0,0,0,0,0,1}}
+	{'9', {0,0,0,0,0,0,0,0,0,0,0,1}},
+
+	{' ', {0,0,0,0,0,0,0,0,0,0,0,0}}
 };
 
 
@@ -52,9 +54,11 @@ map<char, vector<int>> rows = {
 int main(int argc, char** argv ) {
 	// String values should be inputed here to avoid asking
 	// string sample="abc";
-	string input;
-	cout << ">> Input: ";
-	getline(cin, input);
+	if( argc < 2 ) {
+		cout << "Usage.... \n\tpunch-card <user input>" << endl;
+		return 1;
+	}
+	string input = string(argv[1]);
 
 	string symbols = "__0123456789";
 	vector<vector<int>> punches;
