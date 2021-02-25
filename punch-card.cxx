@@ -54,11 +54,14 @@ map<char, vector<int>> rows = {
 int main(int argc, char** argv ) {
 	// String values should be inputed here to avoid asking
 	// string sample="abc";
+	string input;
 	if( argc < 2 ) {
-		cout << "Usage.... \n\tpunch-card <user input>" << endl;
-		return 1;
+		// cout << argc << "\nUsage.... \n\tpunch-card <user input>" << endl;
+		getline(cin, input);
 	}
-	string input = string(argv[1]);
+	else {
+		input = string(argv[1]);
+	}
 
 	string symbols = "__0123456789";
 	vector<vector<int>> punches;
